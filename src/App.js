@@ -7,7 +7,7 @@ function App() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    if (search == "") return;
+    if (search === "") return;
 
     const endpoint = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`;
 
@@ -18,7 +18,6 @@ function App() {
     }
 
     const json = await response.json();
-    //console.log(json);
     setResults(json.query.search);
     setSearchInfo(json.query.searchinfo);
   };
